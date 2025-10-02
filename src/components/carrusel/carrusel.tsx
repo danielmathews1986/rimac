@@ -93,7 +93,7 @@ const Carousel: React.FC = () => {
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
             >
-                {plans.map((plan, index) => (
+                {plans.map((plan) => (
                     <div className="carousel__slide">
                         <div className="slide-content">
                             <SectionPlanesCA plans={plan}></SectionPlanesCA>
