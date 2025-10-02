@@ -1,5 +1,4 @@
 import house from '@assets/images/planes/IcHomeLight.png';
-import hospital from '@assets/images/planes/IcHospitalLight.png';
 import "./section-planes-otherCA.scss";
 import { useUser } from './userContext';
 import { useNavigate } from 'react-router-dom';

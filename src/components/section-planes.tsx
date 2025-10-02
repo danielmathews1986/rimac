@@ -11,10 +11,6 @@ export default function SectionPlanes() {
 
     if(!userData) return <p>No hay datos de usuario.</p>
 
-    const planes = [
-        {description:'', const: ''}
-    ]
-
     const handleSelectPlan = (value1:string, value2:string) => {
         const plan:any = { description: value1, cost: value2 }
         selectePlan(plan);

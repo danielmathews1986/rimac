@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./home.scss";
 import circulePurple from '@assets/images/home/atomo_stepper.png';
 import circuleGrey from '@assets/images/home/atomo_stepper-2.png';
@@ -23,8 +23,6 @@ export default function Home() {
     const withCheck = radioCheckOn;
 
     const { userData } = useUser();
-    const { state } = useLocation();
-    const navigate = useNavigate();
 
     const [seletedPlan, setSeletedPlan] = useState('');
     const [showPlan, setShowPlan] = useState(false);
@@ -32,7 +30,7 @@ export default function Home() {
 
     if (!userData) return <p>No hay datos de usuario.</p>
 
-    const { type, document, celular, user } = userData;
+    const { user } = userData;
 
     const { name } = user;
 

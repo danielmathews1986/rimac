@@ -32,7 +32,6 @@ const CarouselPer: React.FC = () => {
 
                 setPlans(data.list.slice(-2));
 
-                console.log('data', data)
             } catch (err: any) {
                 setError(err.message || 'Error fetching plans');
             } finally {

@@ -1,6 +1,5 @@
 import { useUser } from './userContext';
 import house from '@assets/images/planes/IcHomeLight.png';
-import hospital from '@assets/images/planes/IcHospitalLight.png';
 import "./section-planesCA.scss";
 import { useNavigate } from 'react-router-dom';
 
@@ -14,12 +13,6 @@ export default function SectionPlanesCA({ plans }: ISectionPlanesCA) {
     const navigate = useNavigate();
 
     if (!userData) return <p>No hay datos de usuario.</p>
-
-    console.log('desde plans CA', plans)
-
-    const planes = [
-        { description: '', const: '' }
-    ]
 
     const handleSelectPlan = (value1: string, value2: string) => {
         const plan: any = { description: value1, cost: value2 }
