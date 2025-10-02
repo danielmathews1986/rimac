@@ -1,0 +1,172 @@
+.plane-body {
+    display: flex;
+    margin: 0 auto;
+    width: 928px;
+    gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+    &__planes {
+        width: 288px;
+        height: auto;
+        opacity: 1;
+        padding-top: 68px;
+        padding-right: 32px;
+        padding-bottom: 48px;
+        padding-left: 32px;
+        gap: 24px;
+        border-radius: 24px;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0px 1px 32px 0px rgba(174, 172, 243, 0.35);
+
+        &__box-green {
+            background: linear-gradient(86.01deg, #00F4E2 0%, #00FF7F 100%);
+            font-size: 14px;
+            width: 172px;
+            padding: 4px 8px 4px 8px;
+            border-radius: 4px;
+            font-weight: 900;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.4px;
+            vertical-align: middle;
+            color: rgba(20, 25, 56, 1);
+            margin: 0;
+            text-align: left;
+        }
+
+
+        &__header {
+            width: 224px;
+            height: auto;
+            opacity: 1;
+            gap: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &__linea {
+                width: 100%;
+                height: 1px;
+                background-color: rgba(215, 219, 245, 1);
+                margin-top: 1.8rem;
+            }
+
+            &__item {
+                text-align: left;
+                width: 152px;
+
+
+                &__linea {
+                    border: 1px;
+                    color: rgba(215, 219, 245, 1);
+                    width: 224px;
+                }
+
+
+                h4 {
+                    font-family: Lato;
+                    font-weight: 900;
+                    font-style: Black;
+                    font-size: 24px;
+                    line-height: 32px;
+                    text-align: left;
+                    letter-spacing: -0.2px;
+                    color: rgba(20, 25, 56, 1);
+                    margin: 12px 0 22px 0;
+                }
+
+                p {
+                    font-family: Lato;
+                    font-weight: 900;
+                    font-style: Black;
+                    font-size: 12px;
+                    line-height: 16px;
+                    text-align: left;
+                    letter-spacing: 0.6px;
+                    text-transform: uppercase;
+                    color: rgba(121, 129, 178, 1);
+                    margin: 0 0 6px 0;
+                }
+
+                span {
+                    font-family: Lato;
+                    font-weight: 900;
+                    text-align: left;
+                    font-style: Black;
+                    font-size: 20px;
+                    line-height: 28px;
+                    letter-spacing: -0.2px;
+                    color: rgba(20, 25, 56, 1);
+                }
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                &__icon--img {
+                    margin-bottom: 30px;
+                }
+            }
+
+            &__content {
+                text-align: left;
+
+                ul {
+                    padding-inline: 18px;
+                    margin-block-start: 30px;
+                    min-height: 282px;
+                }
+
+                ul li strong {
+                    font-family: Lato;
+                    font-weight: 700;
+                    font-style: Bold;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: 0.1px;
+                    color: rgba(20, 25, 56, 1);
+                }
+
+                ul li {
+                    font-family: Lato;
+                    font-weight: 400;
+                    font-style: Regular;
+                    font-size: 16px;
+                    line-height: 28px;
+                    letter-spacing: 0.1px;
+                    margin-bottom: 24px;
+                    color: rgba(20, 25, 56, 1);
+                }
+
+                button {
+                    width: 224px;
+                    height: 48px;
+                    opacity: 1;
+                    padding-top: 14px;
+                    padding-right: 32px;
+                    padding-bottom: 14px;
+                    padding-left: 32px;
+                    border-radius: 32px;
+                    color: rgba(255, 255, 255, 1);
+                    background-color: rgba(255, 28, 68, 1);
+                }
+            }
+
+        }
+
+
+
+
+    }
+}
+
+@media (max-width: 992px) {
+    .plane-body {
+        margin-top: 10rem;
+    }
+}

@@ -1,0 +1,184 @@
+.details {
+
+
+    &__conten--purple {
+        display: block;
+        width: 1360;
+        height: 56;
+        top: 64px;
+        opacity: 1;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background: rgba(237, 239, 252, 1);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        gap: 16px;
+
+        &__planes {
+            font-family: Lato;
+            font-weight: 700;
+            font-style: Bold;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+
+            a {
+                color: rgba(121, 129, 178, 1);
+            }
+        }
+
+        &__lines {
+            width: 32;
+            height: 24.000001907348633;
+            opacity: 1;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            gap: 10px;
+        }
+
+
+        &__resumen {
+            font-family: Lato;
+            font-weight: 400;
+            font-style: Regular;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+            color: rgba(121, 129, 178, 1);
+
+        }
+    }
+
+    @media (max-width: 992px) {
+        &__conten--purple {
+            display: none;
+        }
+    }
+
+    &__content--main {
+        width: 928px;
+        height: 404px;
+        opacity: 1;
+        gap: 48px;
+        margin: 0 auto;
+
+
+
+        &__contentLink {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 8px;
+            margin-top: 42px;
+    
+            &__link {
+                font-family: Lato;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 18px;
+                line-height: 20px;
+                letter-spacing: 0.4px;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 992px) {
+            &__contentLink {
+                display: none;
+            }
+        }
+
+        &__title {
+            font-family: Lato;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 48px;
+            letter-spacing: -0.6px;
+            color: rgba(20, 25, 56, 1);
+            text-align: left;
+        }
+
+        @media (max-width: 992px) {
+            &__title {
+                font-size: 32px;
+            }
+        }
+    
+
+        &__content {
+            width: auto;
+            height: 308px;
+            opacity: 1;
+            padding-top: 24px;
+            padding-right: 32px;
+            padding-bottom: 24px;
+            padding-left: 32px;
+            gap: 16px;
+            border-radius: 24px;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0px 1px 24px 0px rgba(174, 172, 243, 0.25);
+
+
+
+            &__line {
+                width: 100%;
+                height: 1px;
+                background-color: rgba(215, 219, 245, 1);
+            }
+
+            &__text--first {
+                font-family: Lato;
+                font-weight: 900;
+                font-style: Black;
+                font-size: 10px;
+                line-height: 16px;
+                letter-spacing: 0.8px;
+                vertical-align: middle;
+                text-transform: uppercase;
+                color: rgba(20, 25, 56, 1);
+            }
+
+            &__content--title {
+                align-items: center;
+                justify-content: start;
+                display: flex;
+                gap: 8px;
+            }
+
+            &__parraf--title {
+                font-family: Lato;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 16px;
+                line-height: 24px;
+                letter-spacing: 0.2px;
+                vertical-align: middle;
+                color: rgba(20, 25, 56, 1);
+            }
+
+            &__parraf {
+                font-family: Lato;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0.1px;
+                vertical-align: middle;
+                margin: 0;
+            }
+        }
+
+        
+
+    }
+
+    @media (max-width: 992px) {
+        &__content--main {
+            width: auto; 
+            padding: 1.4rem;
+        }
+    }
+
+}
