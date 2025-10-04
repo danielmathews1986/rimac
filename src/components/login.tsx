@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "./userContext";
 import "./login.scss"
 import logo from '@assets/images/login/Logo.png';
@@ -116,6 +116,7 @@ export default function Login() {
                         <span className="login__contentHeader__box__text">¡Compra por este medio!</span>
                         <img src={phone} className="login__contentHeader__box__phone" alt="phone" />
                         <span className="login__contentHeader__box__cel">(01) 411 6001 </span>
+                        <Link to="/portafolio"><span className="navbar__contentHeader__box__cel">portafolio </span></Link>
                     </div>
 
                 </div>
