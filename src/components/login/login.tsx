@@ -132,7 +132,11 @@ export default function Login() {
                                                 <input type="text"
                                                     id="document"
                                                     value={document}
-                                                    onChange={(e) => setDocument(e.target.value)}
+        
+                                                    onChange={(e) => {
+                                                        const value = e.target.value;
+                                                        if (/^\d*$/.test(value)) setDocument(value);
+                                                      }}
                                                     className="input-group__input"
                                                 />
                                                 <label htmlFor="document" className="input-group__label">Nro. de documento</label>
@@ -158,7 +162,10 @@ export default function Login() {
                                         id="celular"
                                         className="input-group__input-cel"
                                         value={celular}
-                                        onChange={(e) => setCelular(e.target.value)}
+                                        onChange={(e) => {
+                                            const value = e.target.value;
+                                            if (/^\d*$/.test(value)) setCelular(value);
+                                          }}
                                     />
                                     <label htmlFor="celular" className="input-group__label">Celular</label>
                                     {errors.celular && (
