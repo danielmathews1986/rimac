@@ -4,11 +4,11 @@ import iconsWebGray from '@assets/images/carrusel/atoms-button-circle-icons-web-
 import iconsWebPurple from '@assets/images/carrusel/atoms-button-circle-icons-web-3.png';
 import SectionPlanesCA from '../planes/section-planesCA';
 import { fetchPlansApi } from '../../services/plan.service';
-import type { PlanList } from '../../types/Plan';
+import type { Plan } from '../../types/Plan';
 
 
 const CarouselPer: React.FC = () => {
-    const [plans, setPlans] = useState<PlanList[]>([]);
+    const [plans, setPlans] = useState<Plan[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [currentSlide, setCurrentSlide] = useState(0);

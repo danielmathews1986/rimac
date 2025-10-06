@@ -1,7 +1,7 @@
 import { API_URLS } from '../constants/apis';
-import type { PlanList } from '../types/Plan';
+import type { Plan } from '../types/Plan';
 
-export async function fetchPlansApi(): Promise<PlanList[]> {
+export async function fetchPlansApi(): Promise<Plan[]> {
   const response = await fetch(API_URLS.PLANS);
 
   if (!response.ok) {
@@ -9,5 +9,5 @@ export async function fetchPlansApi(): Promise<PlanList[]> {
   }
 
   const data = await response.json();
-  return data as PlanList[]; 
+  return data as Plan[]; 
 }

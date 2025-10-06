@@ -4,10 +4,10 @@ import iconsWebGray from '@assets/images/carrusel/atoms-button-circle-icons-web-
 import iconsWebPurple from '@assets/images/carrusel/atoms-button-circle-icons-web-3.png';
 import SectionPlanesCA from '../planes/section-planesCA';
 import { fetchPlansApi } from '../../services/plan.service';
-import type { PlanList } from '../../types/Plan';
+import type { Plan } from '../../types/Plan';
 
 const Carousel: React.FC = () => {
-    const [plans, setPlans] = useState<PlanList[]>([]);
+    const [plans, setPlans] = useState<Plan[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -19,7 +19,9 @@ const Carousel: React.FC = () => {
         const fetchPlans = async () => {
             try {
                 const data = await fetchPlansApi();
+                console.log("carrusel", data)
                 setPlans(data.slice(0, 3));
+                
 
             } catch (err: any) {
                 setError(err.message || 'Error fetching plans');
@@ -72,6 +74,8 @@ const Carousel: React.FC = () => {
     if (!plans || plans.length === 0) {
         return <p>No se encontraron planes.</p>;
     }
+
+
 
     return (
         <div className="carousel">
