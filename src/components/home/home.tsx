@@ -29,7 +29,6 @@ export default function Home() {
     const [textPlan, setTextPlan] = useState('');
 
     if (!userData) return <p>No hay datos de usuario.</p>
-    console.log("userData", userData)
 
     const { user } = userData;
 

@@ -3,6 +3,7 @@ import './carrusel.scss';
 import iconsWebGray from '@assets/images/carrusel/atoms-button-circle-icons-web-2.png';
 import iconsWebPurple from '@assets/images/carrusel/atoms-button-circle-icons-web-3.png';
 import SectionPlanesCA from '../planes/section-planesCA';
+import { fetchPlansApi } from '../../services/plan.service';
 
 type Plan = {
     name: string;
@@ -22,14 +23,7 @@ const CarouselPer: React.FC = () => {
     useEffect(() => {
         const fetchPlans = async () => {
             try {
-                const response = await fetch(
-                    'https://rimac-front-end-challenge.netlify.app/api/plans.json'
-                );
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-
+                const data = await fetchPlansApi();
                 setPlans(data.list.slice(-2));
 
             } catch (err: any) {

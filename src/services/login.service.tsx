@@ -1,5 +1,3 @@
-// src/services/userService.ts
-
 import { API_URLS } from '../constants/apis';
 import type { User } from '../types/User';
 
@@ -11,6 +9,5 @@ export async function fetchUsers(): Promise<User> {
   }
 
   const data = await response.json();
-  console.log("data", data)
   return data as User; 
 }
