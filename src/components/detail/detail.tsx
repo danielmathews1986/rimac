@@ -5,7 +5,8 @@ import line from '@assets/images/detail/line-2.png';
 import userIcon from '@assets/images/detail/gl_family-24x24.png';
 import iconButton from '@assets/images/home/Icon-button.png';
 import "./detail.scss";
-import { useUser } from "./userContext";
+import { useUser } from "../userContext";
+
 
 export default function DetailUser() {
 

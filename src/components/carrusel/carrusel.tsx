@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './carrusel.scss';
-import SectionPlanesCA from '../section-planesCA';
 import iconsWebGray from '@assets/images/carrusel/atoms-button-circle-icons-web-2.png';
 import iconsWebPurple from '@assets/images/carrusel/atoms-button-circle-icons-web-3.png';
+import SectionPlanesCA from '../planes/section-planesCA';
 
 type Plan = {
     name: string;

@@ -1,17 +1,16 @@
+
 import house from '@assets/images/planes/IcHomeLight.png';
 import hospital from '@assets/images/planes/IcHospitalLight.png';
-import "./section-planes-other.scss";
-import { useUser } from './userContext';
+import "./section-planes.scss";
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../userContext';
 
-
-export default function SectionPlanesOther() {
+export default function SectionPlanes() {
 
     const {selectePlan, userData} = useUser();
     const navigate = useNavigate();
 
     if(!userData) return <p>No hay datos de usuario.</p>
-
 
     const handleSelectPlan = (value1:string, value2:string) => {
         const plan:any = { description: value1, cost: value2 }
@@ -22,34 +21,29 @@ export default function SectionPlanesOther() {
     return (
 
         <>
-            <div className="plane-person">
-                <div className="plane-person__planes">
-
-                    <div className='plane-person__planes__header'>
-                        <div className="plane-person__planes__header__item">
+            <div className="plane-body">
+                <div className="plane-body__planes">
+                    <div className='plane-body__planes__header'>
+                        <div className="plane-body__planes__header__item">
                             <h4>
                                 Plan en Casa
                             </h4>
                             <p>
                                 Costo del plan
                             </p>
-
-                            <p className="plane-person__planes__header__item__tac">$39 antes</p>
-
                             <span>
-                                $37.05 al mes
+                                $39 al mes
                             </span>
                         </div>
-                        <img src={house} className='plane-person__planes__header__item__icon--img' alt="" width="56px" />
+                        <img src={house} className='plane-body__planes__header__item__icon--img' alt="" width="56px" />
                     </div>
 
-                    <div className="plane-person__planes__header__linea"> </div>
+                    <div className="plane-body__planes__header__linea"> </div>
 
-                    <div className="plane-person__planes__header__content">
+                    <div className="plane-body__planes__header__content">
                         <ul>
                             <li>
-                                <strong> Médico general a domicilio</strong> por S/20 y medicinas cubiertas al 100%.
-
+                                <strong>Médico general a domicilio</strong> por S/20 y medicinas cubiertas al 100%.
                             </li>
                             <li>
                                 <strong>Videoconsulta</strong>
@@ -61,34 +55,33 @@ export default function SectionPlanesOther() {
                             </li>
                         </ul>
 
-                        <button onClick={()=>handleSelectPlan('Plan en Casa','$37.05 al mes')}>
+                        <button onClick={()=>handleSelectPlan('Plan en Casa','$39 al mes')}>
                             Seleccionar Plan
                         </button>
                     </div>
 
                 </div>
 
-                <div className="plane-person__planes">
-                    <h4 className='plane-person__planes__box-green'>Plan recomendado</h4>
-                    <div className='plane-person__planes__header'>
-                        <div className="plane-person__planes__header__item">
+                <div className="plane-body__planes">
+                    <h4 className='plane-body__planes__box-green'>Plan recomendado</h4>
+                    <div className='plane-body__planes__header'>
+                        <div className="plane-body__planes__header__item">
                             <h4>
                                 Plan en Casa y Clínica
                             </h4>
                             <p>
                                 Costo del plan
                             </p>
-                            <p className="plane-person__planes__header__item__tac">$99 antes</p>
                             <span>
-                                $94.05 al mes
+                                $99 al mes
                             </span>
                         </div>
-                        <img src={hospital} className='plane-person__planes__header__item__icon--img' alt="" width="56px" />
+                        <img src={hospital} className='plane-body__planes__header__item__icon--img' alt="" width="56px" />
                     </div>
 
-                    <div className="plane-person__planes__header__linea"> </div>
+                    <div className="plane-body__planes__header__linea"> </div>
 
-                    <div className="plane-person__planes__header__content">
+                    <div className="plane-body__planes__header__content">
                         <ul>
                             <li>
                                 <strong> Consultas en clínica</strong> para cualquier especialidad.
@@ -103,34 +96,33 @@ export default function SectionPlanesOther() {
                             </li>
                         </ul>
 
-                        <button onClick={()=>handleSelectPlan('Plan en Casa',' $94.05 al mes')}>
+                        <button onClick={()=>handleSelectPlan('Plan en Casa y Clínica','$99 al mes')}>
                             Seleccionar Plan
                         </button>
                     </div>
 
                 </div>
 
-                <div className="plane-person__planes">
+                <div className="plane-body__planes">
 
-                    <div className='plane-person__planes__header'>
-                        <div className="plane-person__planes__header__item">
+                    <div className='plane-body__planes__header'>
+                        <div className="plane-body__planes__header__item">
                             <h4>
-                                Plan en Casa
+                                Plan en Casa + Chequeo
                             </h4>
                             <p>
                                 Costo del plan
                             </p>
-                            <p className="plane-person__planes__header__item__tac">$49 antes</p>
                             <span>
-                                $46.55 al mes
+                                $49 al mes
                             </span>
                         </div>
-                        <img src={house} className='plane-person__planes__header__item__icon--img' alt="" width="56px" />
+                        <img src={house} className='plane-body__planes__header__item__icon--img' alt="" width="56px" />
                     </div>
 
-                    <div className="plane-person__planes__header__linea"> </div>
+                    <div className="plane-body__planes__header__linea"> </div>
 
-                    <div className="plane-person__planes__header__content">
+                    <div className="plane-body__planes__header__content">
                         <ul>
                             <li>
                                 <strong>Un Chequeo preventivo general </strong> de manera presencial o virtual.
@@ -147,15 +139,18 @@ export default function SectionPlanesOther() {
                             </li>
                         </ul>
 
-                        <button onClick={()=>handleSelectPlan('Plan en Casa',' $46.55 al mes')}>
+                        <button onClick={()=>handleSelectPlan('Plan en Casa + Chequeo','$49 al mes')}>
                             Seleccionar Plan
                         </button>
                     </div>
 
                 </div>
 
+
+
             </div>
 
         </>
+
     )
 }

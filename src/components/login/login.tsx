@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useUser } from "./userContext";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../userContext";
 import "./login.scss"
 import logo from '@assets/images/login/Logo.png';
 import phone from '@assets/images/login/phone.png';
 import bannerImage from '@assets/images/login/desktop-banner.jpg';
 import arrow from '@assets/images/login/gl-sm-down.png';
 import bannerMobile from '@assets/images/login/mobile-banner.jpg';
+import { validateCelular, validateDocumento } from "../../util/validation";
+import { fetchUsers } from "../../services/login.service";
 
 
 export default function Login() {
@@ -40,20 +42,13 @@ export default function Login() {
         setErrors({ document: '', celular: '' });
 
         try {
-            const response = await fetch('https://rimac-front-end-challenge.netlify.app/api/user.json');
-
-            if (!response.ok) {
-                throw new Error('hubo un error')
-            }
-
-            const userDataApi = await response.json();
-
+            const user = await fetchUsers();
 
             const userData = {
                 type: type,
                 document: document,
                 celular: celular,
-                user: userDataApi
+                user: user
             }
 
             loginUser(userData);
@@ -64,42 +59,6 @@ export default function Login() {
             console.log(error);
         }
 
-
-    };
-
-
-    const validateDocumento = (document: string, type: string) => {
-        if (!document.trim()) {
-            return 'Campo obligatorio';
-        }
-
-        if (!/^\d+$/.test(document)) {
-            return 'Debe contener solo números';
-        }
-
-        const expectedLength = type === 'DNI' ? 8 : type === 'RUC' ? 11 : null;
-
-        if (expectedLength && document.length !== expectedLength) {
-            return `${type} debe tener ${expectedLength} dígitos`;
-        }
-
-        return null;
-    };
-
-    const validateCelular = (celular: string) => {
-        if (!celular.trim()) {
-            return 'Campo obligatorio';
-        }
-
-        if (!/^\d+$/.test(celular)) {
-            return 'Debe contener solo números';
-        }
-
-        if (celular.length !== 9) {
-            return 'Celular debe tener 9 dígitos';
-        }
-
-        return null;
     };
 
 
@@ -116,7 +75,6 @@ export default function Login() {
                         <span className="login__contentHeader__box__text">¡Compra por este medio!</span>
                         <img src={phone} className="login__contentHeader__box__phone" alt="phone" />
                         <span className="login__contentHeader__box__cel">(01) 411 6001 </span>
-                        <Link to="/portafolio"><span className="navbar__contentHeader__box__cel">portafolio </span></Link>
                     </div>
 
                 </div>

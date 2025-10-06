@@ -1,7 +1,8 @@
-import { useUser } from './userContext';
+
 import house from '@assets/images/planes/IcHomeLight.png';
 import "./section-planesCA.scss";
 import { useNavigate } from 'react-router-dom';
+import { useUser } from '../userContext';
 
 interface ISectionPlanesCA {
     plans: any;

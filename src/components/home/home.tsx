@@ -9,12 +9,12 @@ import radio from '@assets/images/home/Radio.png';
 import radioCheckOn from '@assets/images/home/RadioCheck-on.png';
 import iconButton from '@assets/images/home/Icon-button.png';
 import atomsuttonCircle from '@assets/images/home/atoms-button-circle-icons-web.png';
-import SectionPlanes from "./section-planes";
 import { useState } from "react";
-import SectionPlanesOther from "./section-planes-other";
-import { useUser } from "./userContext";
-import Carousel from "./carrusel/carrusel";
-import CarouselPer from "./carrusel/carruselPer";
+import { useUser } from "../userContext";
+import Carousel from "../carrusel/carrusel";
+import CarouselPer from "../carrusel/carruselPer";
+import SectionPlanes from "../planes/section-planes";
+import SectionPlanesOther from "../planes/section-planes-other";
 
 
 export default function Home() {
@@ -29,6 +29,7 @@ export default function Home() {
     const [textPlan, setTextPlan] = useState('');
 
     if (!userData) return <p>No hay datos de usuario.</p>
+    console.log("userData", userData)
 
     const { user } = userData;
 

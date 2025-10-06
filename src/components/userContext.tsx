@@ -1,21 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import type { ReactNode } from 'react';
+import type { PlanData, UserData } from '../types/User';
 
-interface User {
-  name: string;
-}
-
-interface PlanData {
-    description: string;
-    cost: string;
-}
-
-interface UserData {
-  type: string;
-  document: string;
-  celular: string;
-  user: User;
-}
 
 interface UserContextType {
   userData: UserData | null;
