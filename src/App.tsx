@@ -6,15 +6,19 @@ import Layout from './layout/layout'
 import Home from './components/home/home'
 import { PortafolioHome } from './components/portafolio/portafolio'
 import DetailUser from './components/detail/detail'
+import ProtectedRoute from './guard/ProtectedRoute'
 
 function App() {
 
   return (
     <Router>
       <Routes>
-      <Route path="portafolio" element={<PortafolioHome />} />
-      <Route index element={<Login />} />
-        <Route path="/" element={<Layout />}>
+        <Route path="portafolio" element={<PortafolioHome />} />
+        <Route index element={<Login />} />
+        <Route path="/" element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>}>
           <Route path="home" element={<Home />} />
           <Route path="user/:id" element={<DetailUser />} />
         </Route>
