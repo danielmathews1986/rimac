@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./home.scss";
 import circulePurple from '@assets/images/home/atomo_stepper.png';
 import circuleGrey from '@assets/images/home/atomo_stepper-2.png';
