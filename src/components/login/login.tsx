@@ -66,7 +66,7 @@ export default function Login() {
         <>
             <div className="background" />
             <div className="background-right" />
-            <div className="login">
+            <div className="login animate__animated animate__fadeIn">
 
                 <div className="login__contentHeader">
                     <img src={logo} alt="logo rimac" width="73" className="login__contentHeader__logo" />
@@ -97,7 +97,7 @@ export default function Login() {
 
                                 <img src={bannerMobile} alt="banner-mobile" width="136px" className="banner-mobile" />
 
-                                
+
                             </div>
 
                             <div className="login__contentBody__sizeBoxRight__contentItems__linea"></div>
@@ -132,11 +132,11 @@ export default function Login() {
                                                 <input type="text"
                                                     id="document"
                                                     value={document}
-        
+
                                                     onChange={(e) => {
                                                         const value = e.target.value;
                                                         if (/^\d*$/.test(value)) setDocument(value);
-                                                      }}
+                                                    }}
                                                     className="input-group__input"
                                                 />
                                                 <label htmlFor="document" className="input-group__label">Nro. de documento</label>
@@ -165,7 +165,7 @@ export default function Login() {
                                         onChange={(e) => {
                                             const value = e.target.value;
                                             if (/^\d*$/.test(value)) setCelular(value);
-                                          }}
+                                        }}
                                     />
                                     <label htmlFor="celular" className="input-group__label">Celular</label>
                                     {errors.celular && (
@@ -180,7 +180,7 @@ export default function Login() {
                                 </label>
 
                                 <label className="checkbox">
-                                    <input type="checkbox" className="checkbox__input" checked/>
+                                    <input type="checkbox" className="checkbox__input" checked />
                                     <span className="checkbox__custom"></span>
                                     <span className="checkbox__label">Acepto la Política Comunicaciones Comerciales</span>
                                 </label>

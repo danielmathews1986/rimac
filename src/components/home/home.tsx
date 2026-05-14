@@ -42,7 +42,7 @@ export default function Home() {
 
     return (
         <>
-            <div className="home">
+            <div className="home animate__animated animate__fadeIn">
 
                 <div className="home__main--barra">
                     <div className="home__main--barra__barra">

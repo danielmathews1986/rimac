@@ -19,7 +19,7 @@ export default function DetailUser() {
 
     return (
         <>
-            <div className="details">
+            <div className="details animate__animated animate__fadeIn">
 
 
                 <div className="details__conten--purple">
