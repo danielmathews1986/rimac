@@ -100,6 +100,12 @@
         }
       }
 
+      @media (max-width: 480px) {
+        &__cel {
+          font-size: 16px;
+        }
+      }
+
     }
 
     @media (max-width: 992px) {
@@ -111,6 +117,12 @@
     @media (max-width: 992px) {
       &__logo {
         margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      &__box {
+        margin-right: 38px;
       }
     }
   }
@@ -197,6 +209,8 @@
           color: white;
           background: rgba(3, 5, 15, 1);
           margin: 12px 0 0px 0;
+          margin-top: 32px;
+          font-size: 20px;
         }
 
         
@@ -238,6 +252,10 @@
           span.box-green {
             line-height: 12px;
           }
+
+          button {
+            font-size: 18px;
+          }
         }
 
         span.box-green {
@@ -261,7 +279,8 @@
       @media (max-width: 480px) {
         &__contentItems {
           padding-left: 0;
-          padding: 1rem;
+          //padding: 1rem;
+          padding: 0px 36px 0px 36px;
           width: auto;
         }
 
@@ -303,6 +322,10 @@
     margin-top: 16px;
   }
 
+  &__mb-2{
+    margin-bottom: 2px;
+  }
+
   &__input {
     display: none; // ocultamos el checkbox nativo
   }
@@ -311,9 +334,10 @@
     width: 20px;
     height: 20px;
     border-radius: 4px;
-    background-color: black;
+    background-color: white;
     position: relative;
     display: inline-block;
+    border: 1px solid #dedede;
 
     &::after {
       content: '';
@@ -329,6 +353,11 @@
       transition: opacity 0.2s ease;
 
     }
+  }
+
+  input:checked + &__custom {
+    background-color: #000000;
+    border: 1px solid #000000;
   }
 
   &__input:checked+.checkbox__custom::after {
@@ -349,6 +378,13 @@
       color: #007bff;
       text-decoration: underline;
     }
+  }
+
+  @media (max-width: 480px) {
+    &__w-300 {
+      width: 300px;
+    }
+
   }
 }
 
@@ -431,7 +467,7 @@
   
 
   &__input-cel {
-    margin-top: 16px;
+    margin-top: 4px;
     padding: 8px 16px 8px 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -459,16 +495,18 @@
   }
 
   &__label {
-    position: absolute;
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-    font-size: 1rem;
-    color: #aaa;
-    pointer-events: none;
-    transition: all 0.2s ease;
-    background-color: transparent;
-    padding: 0 0.25rem;
+    // position: absolute;
+    // top: 50%;
+    // left: 16px;
+    // transform: translateY(-50%);
+    font-size: 14px;
+    color: #03050F;
+    font-weight: 600;
+    // pointer-events: none;
+    // transition: all 0.2s ease;
+    // background-color: transparent;
+    // padding: 0 0.25rem;
+
   }
 }
 
@@ -494,4 +532,24 @@
     font-size: 0.75rem;
     color: red;
   }
+}
+
+.lg-2 {
+  margin-left: 2.2rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-02 {
+  margin-top: 0.2rem;
+}
+
+.mb-05 {
+  margin-bottom: 1rem;
 }

@@ -16,7 +16,11 @@
             letter-spacing: 0.4px;
             text-align: center;
             vertical-align: middle;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        }
 
+        img {
+            width: 20px;
         }
     }
 
@@ -43,12 +47,13 @@
 
         &__planes {
             font-family: Lato;
-            font-weight: 700;
+            font-weight: 500;
             font-style: Bold;
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0.2px;
             color: rgba(20, 25, 56, 1);
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
 
         }
@@ -65,11 +70,12 @@
 
         &__resumen {
             font-family: Lato;
-            font-weight: 400;
+            font-weight: 500;
             font-style: Regular;
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0.2px;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
             a {
                 color: rgba(121, 129, 178, 1);
@@ -99,8 +105,9 @@
 
         h4 {
             font-family: Lato;
-            font-weight: 700;
+            font-weight: 500;
             font-size: 40px;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             line-height: 48px;
             letter-spacing: -0.6px;
             text-align: center;
@@ -122,6 +129,7 @@
             font-family: Lato;
             font-weight: 400;
             font-style: Regular;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             font-size: 16px;
             line-height: 28px;
             letter-spacing: 0.1px;
@@ -190,7 +198,7 @@
 
                     h4 {
                         font-family: Lato;
-                        font-weight: 900;
+                        font-weight: 700;
                         font-style: Black;
                         font-size: 20px;
                         line-height: 28px;
@@ -198,6 +206,7 @@
                         color: rgba(20, 25, 56, 1);
                         text-align: left;
                         margin: 6px 0 0 0;
+                        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                     }
 
                     img {
@@ -223,6 +232,7 @@
                         color: rgba(20, 25, 56, 1);
                         text-align: left;
                         margin: 6px 0 0 0;
+                        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                     }
 
                     @media (max-width: 992px) {
@@ -322,7 +332,9 @@
 
             @media (max-width: 420px) {
                 &__fondo {
-                    width: 60%;
+                    width: 64%;
+                    height: 6px;
+                    margin: 11px 0 0 8px;
                 }
             }
         }

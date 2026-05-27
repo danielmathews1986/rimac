@@ -32,3 +32,20 @@ export const validateCelular = (celular: string) => {
 
     return null;
 };
+
+export const validatePrivacyPolicy = (accepted: boolean) => {
+    if (!accepted) {
+      return 'Campo obligatorio';
+    }
+  
+    return null;
+  };
+
+export const  validatePrivacyPolicyCC = (accepted: boolean) => {
+    if (!accepted) {
+      return 'Campo obligatorio';
+    }
+    return null;
+  };
+
+ 

@@ -77,9 +77,10 @@
 
                 h4 {
                     font-family: Lato;
-                    font-weight: 900;
+                    font-weight: 700;
                     font-style: Black;
                     font-size: 24px;
+                    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                     line-height: 32px;
                     text-align: left;
                     letter-spacing: -0.2px;
@@ -89,7 +90,8 @@
 
                 p {
                     font-family: Lato;
-                    font-weight: 900;
+                    font-weight: 700;
+                    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                     font-style: Black;
                     font-size: 12px;
                     line-height: 16px;
@@ -109,6 +111,7 @@
                     line-height: 28px;
                     letter-spacing: -0.2px;
                     color: rgba(20, 25, 56, 1);
+                    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                 }
 
                 img {
@@ -134,18 +137,20 @@
 
                 ul li strong {
                     font-family: Lato;
-                    font-weight: 700;
+                    font-weight: 500;
                     font-style: Bold;
                     font-size: 16px;
                     line-height: 28px;
                     letter-spacing: 0.1px;
                     color: rgba(20, 25, 56, 1);
+                    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                 }
 
                 ul li {
                     font-family: Lato;
                     font-weight: 400;
                     font-style: Regular;
+                    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
                     font-size: 16px;
                     line-height: 28px;
                     letter-spacing: 0.1px;

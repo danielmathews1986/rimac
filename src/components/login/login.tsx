@@ -7,7 +7,7 @@ import phone from '@assets/images/login/phone.png';
 import bannerImage from '@assets/images/login/desktop-banner.jpg';
 import arrow from '@assets/images/login/gl-sm-down.png';
 import bannerMobile from '@assets/images/login/mobile-banner.jpg';
-import { validateCelular, validateDocumento } from "../../util/validation";
+import { validateCelular, validateDocumento, validatePrivacyPolicy, validatePrivacyPolicyCC } from "../../util/validation";
 import { fetchUsers } from "../../services/login.service";
 
 
@@ -17,7 +17,9 @@ export default function Login() {
     const [type, setType] = useState('DNI');
     const [document, setDocument] = useState('');
     const [celular, setCelular] = useState('');
-    const [errors, setErrors] = useState({ document: '', celular: '' });
+    const [errors, setErrors] = useState({ document: '', celular: '', accepted: '', acceptedCC: '' });
+    const [accepted, setAccepted] = useState(false);
+    const [acceptedCC, setAcceptedCC] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e: any) => {
@@ -25,6 +27,16 @@ export default function Login() {
         e.preventDefault();
 
         const newErrors: any = {};
+
+        const privacyError = validatePrivacyPolicy(accepted);
+        if (privacyError) {
+            newErrors.accepted = privacyError;
+        }
+
+        const privacyErrorCC = validatePrivacyPolicyCC(acceptedCC);
+        if (privacyErrorCC) {
+            newErrors.acceptedCC = privacyErrorCC;
+        }
 
         const documentError = validateDocumento(document, type);
         if (documentError) newErrors.document = documentError;
@@ -39,7 +51,9 @@ export default function Login() {
             return;
         }
 
-        setErrors({ document: '', celular: '' });
+
+        setErrors({ document: '', celular: '', accepted: '', acceptedCC: '' });
+
 
         try {
             const user = await fetchUsers();
@@ -59,7 +73,10 @@ export default function Login() {
             console.log(error);
         }
 
+
     };
+
+
 
 
     return (
@@ -107,8 +124,8 @@ export default function Login() {
 
                             <form className="form" onSubmit={handleSubmit}>
 
-
-                                <div className="input-group">
+                            <label htmlFor="document" className="input-group__label">Nro. de documento</label>
+                                <div className="input-group mt-02 mb-05">
 
                                     <div className="input-group__block">
                                         <div className="input-group__flex">
@@ -132,14 +149,14 @@ export default function Login() {
                                                 <input type="text"
                                                     id="document"
                                                     value={document}
-
+                                                    maxLength={type === 'DNI' ? 8 : 11}
                                                     onChange={(e) => {
                                                         const value = e.target.value;
                                                         if (/^\d*$/.test(value)) setDocument(value);
                                                     }}
                                                     className="input-group__input"
                                                 />
-                                                <label htmlFor="document" className="input-group__label">Nro. de documento</label>
+                                                
 
                                             </div>
                                         </div>
@@ -151,42 +168,89 @@ export default function Login() {
                                         )}
                                     </div>
 
-
-
-
-
                                 </div>
 
+                                <label htmlFor="celular" className="input-group__label mt-2">Celular</label>
                                 <div className="input-group__input-wrapper">
                                     <input type="text"
                                         id="celular"
                                         className="input-group__input-cel"
                                         value={celular}
+                                        maxLength={9}
                                         onChange={(e) => {
                                             const value = e.target.value;
                                             if (/^\d*$/.test(value)) setCelular(value);
                                         }}
                                     />
-                                    <label htmlFor="celular" className="input-group__label">Celular</label>
+                                    
                                     {errors.celular && (
                                         <span className="form__error">{errors.celular}</span>
                                     )}
                                 </div>
 
-                                <label className="checkbox checkbox__top16">
-                                    <input type="checkbox" className="checkbox__input" checked />
+                                <label className="checkbox checkbox__top16 checkbox__mb-2">
+                                    <input
+                                        type="checkbox"
+                                        className="checkbox__input"
+                                        checked={accepted}
+                                        onChange={(e) => {
+                                            const checked = e.target.checked;
+
+                                            setAccepted(checked);
+
+                                            setErrors((prev) => ({
+                                                ...prev,
+                                                accepted: checked
+                                                    ? ''
+                                                    : 'Campo obligatorio',
+                                            }));
+                                        }}
+                                    />
+
                                     <span className="checkbox__custom"></span>
-                                    <span className="checkbox__label">Acepto la Política de Privacidad</span>
+
+                                    <div className="flex">
+                                        <span className="checkbox__label">
+                                            Acepto la Política de Privacidad
+                                        </span>
+                                    </div>
                                 </label>
 
-                                <label className="checkbox">
-                                    <input type="checkbox" className="checkbox__input" checked />
+                                {errors.accepted && (
+                                    <span className="form__error lg-2">
+                                        {errors.accepted}
+                                    </span>
+                                )}
+
+
+                                <label className="checkbox checkbox__top16 checkbox__mb-2 checkbox__w-300">
+                                    <input type="checkbox"
+                                        className="checkbox__input"
+                                        checked={acceptedCC}
+                                        onChange={(e) => {
+                                            const checked = e.target.checked;
+                                            setAcceptedCC(checked);
+                                            setErrors((prev) => ({
+                                                ...prev,
+                                                acceptedCC: checked
+                                                    ? ''
+                                                    : 'Campo obligatorio',
+                                            }));
+                                        }}
+                                    />
+
                                     <span className="checkbox__custom"></span>
                                     <span className="checkbox__label">Acepto la Política Comunicaciones Comerciales</span>
                                 </label>
+                                {errors.acceptedCC && (
+                                    <span className="form__error lg-2">
+                                        {errors.acceptedCC}
+                                    </span>
+                                )}
 
-
-                                <a href="#" className="login__contentBody__sizeBoxRight__contentItems__link-term">Aplican Términos y Condiciones.</a>
+                                <div className="mt-2">
+                                    <a href="#" className="login__contentBody__sizeBoxRight__contentItems__link-term mt-2">Aplican Términos y Condiciones.</a>
+                                </div>
 
                                 <button type="submit" className="form__submit">
                                     Cotiza aqui

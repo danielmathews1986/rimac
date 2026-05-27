@@ -17,11 +17,13 @@
 
         &__planes {
             font-family: Lato;
-            font-weight: 700;
+            font-weight: 500;
             font-style: Bold;
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0.2px;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+            
 
             a {
                 color: rgba(121, 129, 178, 1);
@@ -40,14 +42,16 @@
 
         &__resumen {
             font-family: Lato;
-            font-weight: 400;
+            font-weight: 500;
             font-style: Regular;
             font-size: 16px;
             line-height: 24px;
             letter-spacing: 0.2px;
             color: rgba(121, 129, 178, 1);
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
         }
+        
     }
 
     @media (max-width: 992px) {
@@ -80,7 +84,13 @@
                 line-height: 20px;
                 letter-spacing: 0.4px;
                 text-align: left;
+                font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             }
+
+            img {
+                width: 20px;
+            }
+            
         }
 
         @media (max-width: 992px) {
@@ -97,6 +107,7 @@
             letter-spacing: -0.6px;
             color: rgba(20, 25, 56, 1);
             text-align: left;
+            font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
         }
 
         @media (max-width: 992px) {
@@ -138,6 +149,7 @@
                 vertical-align: middle;
                 text-transform: uppercase;
                 color: rgba(20, 25, 56, 1);
+                font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             }
 
             &__content--title {
@@ -156,6 +168,7 @@
                 letter-spacing: 0.2px;
                 vertical-align: middle;
                 color: rgba(20, 25, 56, 1);
+                font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             }
 
             &__parraf {
@@ -167,6 +180,7 @@
                 letter-spacing: 0.1px;
                 vertical-align: middle;
                 margin: 0;
+                font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
             }
         }
 
